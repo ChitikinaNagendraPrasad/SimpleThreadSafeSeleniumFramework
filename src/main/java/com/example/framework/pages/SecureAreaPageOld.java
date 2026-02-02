@@ -3,7 +3,7 @@ package com.example.framework.pages;
 import com.example.framework.utils.WaitUtils;
 import org.openqa.selenium.By;
 
-public class SecureAreaPage {
+public class SecureAreaPageOld {
     private final By flash = By.id("flash");
     private final By logout = By.cssSelector("a.button.secondary.radius");
 

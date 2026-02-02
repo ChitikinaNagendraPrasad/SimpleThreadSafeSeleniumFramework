@@ -5,13 +5,18 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
 import java.nio.file.Path;
 
-public final class ExtentManager {
-    private ExtentManager() {}
+public final class ExtentManager
+{
+    private ExtentManager()
+    {
+    }
 
     private static ExtentReports extent;
 
-    public static synchronized ExtentReports getExtent() {
-        if (extent == null) {
+    public static synchronized ExtentReports getExtent()
+    {
+        if (extent == null)
+        {
             Path reportPath = Path.of("target", "extent-report", "ExtentReport.html");
             ExtentSparkReporter spark = new ExtentSparkReporter(reportPath.toString());
             spark.config().setReportName("Simple Thread-Safe Selenium Framework");

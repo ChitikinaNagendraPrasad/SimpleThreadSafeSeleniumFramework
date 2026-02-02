@@ -2,8 +2,8 @@ package com.example.framework.tests;
 
 import com.example.framework.base.BaseTest;
 import com.example.framework.listeners.RetryAnalyzer;
-import com.example.framework.pages.LoginPage;
-import com.example.framework.pages.SecureAreaPage;
+import com.example.framework.pages.LoginPageOld;
+import com.example.framework.pages.SecureAreaPageOld;
 import com.example.framework.utils.DBUtils;
 import com.example.framework.utils.ExcelUtils;
 import org.apache.logging.log4j.LogManager;
@@ -38,11 +38,8 @@ public class LoginTests extends BaseTest {
     private void runLoginScenario(String username, String password, String expected) {
         log.info("Running login scenario | user={} | expected={}", username, expected);
 
-        LoginPage login = new LoginPage();
-        SecureAreaPage secure = login
-                .enterUsername(username)
-                .enterPassword(password)
-                .submitLogin();
+        LoginPageOld login = new LoginPageOld();
+        SecureAreaPageOld secure = login.enterUsername(username).enterPassword(password).submitLogin();
 
         String msg = secure.getFlashMessage();
 

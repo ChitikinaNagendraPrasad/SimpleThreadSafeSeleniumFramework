@@ -5,7 +5,7 @@ import com.example.framework.utils.WaitUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class LoginPage {
+public class LoginPageOld {
     private final WebDriver driver;
 
     private final By username = By.id("username");
@@ -13,25 +13,25 @@ public class LoginPage {
     private final By loginBtn = By.cssSelector("button[type='submit']");
     private final By flash = By.id("flash");
 
-    public LoginPage() {
+    public LoginPageOld() {
         this.driver = DriverManager.getDriver();
     }
 
-    public LoginPage enterUsername(String value) {
+    public LoginPageOld enterUsername(String value) {
         WaitUtils.visible(username).clear();
         WaitUtils.visible(username).sendKeys(value);
         return this;
     }
 
-    public LoginPage enterPassword(String value) {
+    public LoginPageOld enterPassword(String value) {
         WaitUtils.visible(password).clear();
         WaitUtils.visible(password).sendKeys(value);
         return this;
     }
 
-    public SecureAreaPage submitLogin() {
+    public SecureAreaPageOld submitLogin() {
         WaitUtils.click(loginBtn);
-        return new SecureAreaPage();
+        return new SecureAreaPageOld();
     }
 
     public String getFlashMessage() {

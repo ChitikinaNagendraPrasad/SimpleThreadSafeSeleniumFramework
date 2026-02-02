@@ -13,19 +13,14 @@ public final class CustomExtentManager
     {
     }
 
-
     private static ExtentReports extent;
 
-    public static synchronized ExtentReports getExtent() {
-        if (extent == null) {
-
-            Path reportPath = Paths.get(
-                    System.getProperty("user.dir"),
-                    "Reports",
-                    RunInfo.runId(),
-                    "ExtentReport.html"
-            );
-
+    public static synchronized ExtentReports getExtent()
+    {
+        if (extent == null)
+        {
+            Path reportPath = Paths.get(System.getProperty("user.dir"), "Reports", RunInfo.runId(), "ExtentReport.html");
+            
             ExtentSparkReporter spark = new ExtentSparkReporter(reportPath.toString());
             spark.config().setReportName("Automation Execution Report");
             spark.config().setDocumentTitle("Extent Report");

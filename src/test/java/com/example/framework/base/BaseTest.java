@@ -3,6 +3,10 @@ package com.example.framework.base;
 import com.example.framework.config.ConfigManager;
 import com.example.framework.driver.DriverFactory;
 import com.example.framework.driver.DriverManager;
+import com.example.framework.listeners.ExtentManager;
+
+import java.lang.reflect.Method;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
@@ -13,7 +17,7 @@ public abstract class BaseTest {
     private static final Logger log = LogManager.getLogger(BaseTest.class);
 
     @BeforeMethod(alwaysRun = true)
-    public void setUp() {
+    public void setUp(Method method) {
         WebDriver driver = new DriverFactory().createDriver();
         DriverManager.setDriver(driver);
 
