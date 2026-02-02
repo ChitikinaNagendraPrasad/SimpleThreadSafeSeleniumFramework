@@ -21,3 +21,13 @@ pipeline {
     }
   }
 }
+
+
+post {
+  always {
+    archiveArtifacts artifacts: 'Reports/**, Screenshots/**, target/logs/**', fingerprint: true
+    junit allowEmptyResults: true, testResults: 'target/surefire-reports/testng-results.xml'
+  }
+}
+
+
