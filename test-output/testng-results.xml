@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-02-02T19:24:55 IST" name="BankingDemoSuite" finished-at="2026-02-02T19:25:46 IST" duration-ms="51213">
+    <groups>
+    </groups>
+    <test started-at="2026-02-02T19:24:55 IST" name="LoginTests" finished-at="2026-02-02T19:25:46 IST" duration-ms="51213">
+      <class name="com.example.framework.tests.LoginTests">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.framework.tests.LoginTests@18025ced]" started-at="2026-02-02T19:24:56 IST" name="setUp" finished-at="2026-02-02T19:25:26 IST" duration-ms="29780" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.framework.tests.LoginTests@18025ced]" started-at="2026-02-02T19:24:56 IST" name="setUp" finished-at="2026-02-02T19:25:25 IST" duration-ms="28728" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.framework.tests.LoginTests@18025ced]" started-at="2026-02-02T19:24:56 IST" name="setUp" finished-at="2026-02-02T19:25:27 IST" duration-ms="31436" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.framework.tests.LoginTests@18025ced]" started-at="2026-02-02T19:24:58 IST" name="setUp" finished-at="2026-02-02T19:25:27 IST" duration-ms="28585" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.framework.tests.LoginTests@18025ced]" started-at="2026-02-02T19:24:58 IST" name="setUp" finished-at="2026-02-02T19:25:28 IST" duration-ms="29927" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.framework.tests.LoginTests@18025ced]" started-at="2026-02-02T19:24:58 IST" name="setUp" finished-at="2026-02-02T19:25:29 IST" duration-ms="31375" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="login_using_db(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.example.framework.tests.LoginTests@18025ced]" started-at="2026-02-02T19:25:25 IST" name="login_using_db" data-provider="dbLoginData" finished-at="2026-02-02T19:25:42 IST" duration-ms="17132" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[tomsmith]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[SuperSecretPassword!]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[success]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login_using_db -->
+        <test-method signature="login_using_db(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.example.framework.tests.LoginTests@18025ced]" started-at="2026-02-02T19:25:26 IST" name="login_using_db" data-provider="dbLoginData" finished-at="2026-02-02T19:25:42 IST" duration-ms="16051" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[tomsmith]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[wrong]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[invalid]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login_using_db -->
+        <test-method signature="login_using_excel(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.example.framework.tests.LoginTests@18025ced]" started-at="2026-02-02T19:25:27 IST" name="login_using_excel" data-provider="excelLoginData" finished-at="2026-02-02T19:25:36 IST" duration-ms="9405" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login_using_excel -->
+        <test-method signature="login_using_db(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.example.framework.tests.LoginTests@18025ced]" started-at="2026-02-02T19:25:27 IST" name="login_using_db" data-provider="dbLoginData" finished-at="2026-02-02T19:25:41 IST" duration-ms="13725" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[wrong]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[SuperSecretPassword!]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[invalid]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login_using_db -->
+        <test-method signature="login_using_excel(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.example.framework.tests.LoginTests@18025ced]" started-at="2026-02-02T19:25:28 IST" name="login_using_excel" data-provider="excelLoginData" finished-at="2026-02-02T19:25:41 IST" duration-ms="13083" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login_using_excel -->
+        <test-method signature="login_using_excel(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.example.framework.tests.LoginTests@18025ced]" started-at="2026-02-02T19:25:29 IST" name="login_using_excel" data-provider="excelLoginData" finished-at="2026-02-02T19:25:40 IST" duration-ms="10238" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login_using_excel -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.framework.tests.LoginTests@18025ced]" started-at="2026-02-02T19:25:36 IST" name="tearDown" finished-at="2026-02-02T19:25:46 IST" duration-ms="9483" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.framework.tests.LoginTests@18025ced]" started-at="2026-02-02T19:25:40 IST" name="tearDown" finished-at="2026-02-02T19:25:46 IST" duration-ms="5987" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.framework.tests.LoginTests@18025ced]" started-at="2026-02-02T19:25:41 IST" name="tearDown" finished-at="2026-02-02T19:25:45 IST" duration-ms="4316" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.framework.tests.LoginTests@18025ced]" started-at="2026-02-02T19:25:42 IST" name="tearDown" finished-at="2026-02-02T19:25:46 IST" duration-ms="3993" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.framework.tests.LoginTests@18025ced]" started-at="2026-02-02T19:25:42 IST" name="tearDown" finished-at="2026-02-02T19:25:46 IST" duration-ms="3821" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.framework.tests.LoginTests@18025ced]" started-at="2026-02-02T19:25:42 IST" name="tearDown" finished-at="2026-02-02T19:25:46 IST" duration-ms="3839" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.example.framework.tests.LoginTests -->
+    </test> <!-- LoginTests -->
+  </suite> <!-- BankingDemoSuite -->
+</testng-results>
