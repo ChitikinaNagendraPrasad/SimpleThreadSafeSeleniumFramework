@@ -4,7 +4,7 @@
 <suite name="BankingDemoSuite" parallel="none" thread-count="3">
 
   <!-- Suite level parameters -->
-  <parameter name="run.mode" value="grid"/>
+  <parameter name="run.mode" value="local"/>
   <parameter name="browser" value="chrome"/>
   <!--<parameter name="grid.url" value="http://localhost:4444/wd/hub"/>-->
   <parameter name="grid.url" value="http://localhost:4444"/>
