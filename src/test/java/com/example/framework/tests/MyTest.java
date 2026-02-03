@@ -2,6 +2,7 @@ package com.example.framework.tests;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.example.framework.base.BaseTest;
@@ -24,12 +25,14 @@ public class MyTest extends BaseTest
             homePage = new HomePage();
             loginPage = new LoginPage();
             signUpPage = new SignUpPage();
+            step("Launched the Browser and Opened Application");
         } catch (Exception e)
         {
             throw new RuntimeException("Exception In MyTest::initializePages() Method", e);
         }
     }
 
+        
     @Test
     public void testCase1()
     {
@@ -39,8 +42,8 @@ public class MyTest extends BaseTest
         String emailAddress = "ch.nagendra@nag.com";
         String password = "12345";
 
-        step("Launched the Browser and Opened Application");
-
+        //
+        
         step("Clicked Signup / Login link");
         loginPage = homePage.clickOn_signupOrLogin_Link();
 
@@ -57,7 +60,7 @@ public class MyTest extends BaseTest
         String actualErrorMessage = loginPage.get_EmailOrPassword_Incorrect_Message();
 
         step("Validated error message");
-        Assert.assertEquals(actualErrorMessage, "Your email or password is incorrect!123", "Error Message Not Matched");
+        Assert.assertEquals(actualErrorMessage, "Your email or password is incorrect!", "Error Message Not Matched");
 
     }
 

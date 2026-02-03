@@ -26,6 +26,7 @@ public class MyTest2 extends BaseTest
             homePage = new HomePage();
             loginPage = new LoginPage();
             signUpPage = new SignUpPage();
+            step("Launched the Browser and Opened Application");
         } catch (Exception e)
         {
             throw new RuntimeException("Exception In MyTest::initializePages() Method", e);
@@ -35,13 +36,11 @@ public class MyTest2 extends BaseTest
     @Test
     public void testCase1()
     {
-
         initializePages();
-
         String emailAddress = "ch.nagendra@nag.com";
         String password = "12345";
 
-        step("Launched the Browser and Opened Application");
+        // step("Launched the Browser and Opened Application");
 
         step("Clicked Signup / Login link");
         loginPage = homePage.clickOn_signupOrLogin_Link();
