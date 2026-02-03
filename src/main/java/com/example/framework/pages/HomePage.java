@@ -24,10 +24,12 @@ public class HomePage
     By testCases_Link = By.xpath("//a[contains(text(),\"Test Cases\")]");
     By apiTesting_Link = By.xpath("//a[normalize-space()=\"API Testing\"]");
 
+      
     // Page Methods
-    public void clickOn_home_Link()
+    public HomePage clickOn_home_Link()
     {
         WaitUtils.click(home_Link);
+        return this;
     }
 
     public void clickOn_products_Link()
