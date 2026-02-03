@@ -1,6 +1,6 @@
 package com.example.framework.tests;
 
-import com.example.framework.base.BaseTest;
+import com.example.framework.base.BaseTestOld;
 import com.example.framework.listeners.RetryAnalyzer;
 import com.example.framework.pages.LoginPageOld;
 import com.example.framework.pages.SecureAreaPageOld;
@@ -12,7 +12,7 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-public class LoginTests extends BaseTest {
+public class LoginTests extends BaseTestOld {
     private static final Logger log = LogManager.getLogger(LoginTests.class);
 
     @DataProvider(name = "excelLoginData", parallel = true)
