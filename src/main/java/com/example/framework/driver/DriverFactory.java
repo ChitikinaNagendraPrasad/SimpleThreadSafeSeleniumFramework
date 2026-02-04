@@ -27,8 +27,8 @@ public class DriverFactory
     {
 
         // Nag
-        log.info("SYS run.mode = {}", System.getProperty("run.mode"));
-        log.info("CFG run.mode = {}", ConfigManager.get("run.mode"));
+        log.info("testng.xml ==> SYS run.mode = {} ", System.getProperty("run.mode"));
+        log.info("config.properties ==> CFG run.mode = {} ", ConfigManager.get("run.mode"));
         // Nag
 
         String runMode = ConfigManager.get("run.mode");
@@ -53,14 +53,14 @@ public class DriverFactory
         switch (browser.toLowerCase())
         {
             case "firefox":
-                WebDriverManager.firefoxdriver().setup();
+                //WebDriverManager.firefoxdriver().setup();
                 return new FirefoxDriver(new FirefoxOptions());
             case "edge":
-                WebDriverManager.edgedriver().setup();
+                //WebDriverManager.edgedriver().setup();
                 return new EdgeDriver(new EdgeOptions());
             case "chrome":
             default:
-                WebDriverManager.chromedriver().setup();
+                //WebDriverManager.chromedriver().setup();
                 return new ChromeDriver(new ChromeOptions());
         }
     }

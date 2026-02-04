@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <!--<suite name="BankingDemoSuite" parallel="methods" thread-count="3">-->
-<suite name="BankingDemoSuite" parallel="none" thread-count="3">
+<suite name="BankingDemoSuite" parallel="methods" thread-count="2">
+	<!-- Suite level parameters -->
+	<parameter name="run.mode" value="grid" />
+	<parameter name="browser" value="chrome" />
+	<!--<parameter name="grid.url" value="http://localhost:4444/wd/hub"/>-->
+	<parameter name="grid.url" value="http://localhost:4444" />
+	<parameter name="base.url" value="https://www.automationexercise.com/" />
+	<parameter name="implicit.wait.seconds" value="0" />
+	<parameter name="explicit.wait.seconds" value="10" />
 
-  <!-- Suite level parameters -->
-  <parameter name="run.mode" value="local"/>
-  <parameter name="browser" value="chrome"/>
-  <!--<parameter name="grid.url" value="http://localhost:4444/wd/hub"/>-->
-  <parameter name="grid.url" value="http://localhost:4444"/>
-  <parameter name="base.url" value="https://www.automationexercise.com/"/>
-  <parameter name="implicit.wait.seconds" value="0"/>
-  <parameter name="explicit.wait.seconds" value="10"/>
+	<listeners>
+		<listener
+			class-name="com.example.framework.listeners.ExtentTestNGListener" />
+	</listeners>
 
-  <listeners>
-    <listener class-name="com.example.framework.listeners.ExtentTestNGListener"/>
-  </listeners>
-
-  <test name="LoginTests">
-    <classes>
-      <class name="com.example.framework.tests.MyTest"/>
-      <class name="com.example.framework.tests.MyTest2"/>
-    </classes>
-  </test>
+	<test name="LoginTests">
+		<classes>
+			<class name="com.example.framework.tests.MyTest" />
+			<!--<class name="com.example.framework.tests.MyTest2"/>-->
+		</classes>
+	</test>
 </suite>

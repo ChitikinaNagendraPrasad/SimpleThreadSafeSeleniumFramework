@@ -26,22 +26,23 @@ public class MyTest2 extends BaseTest
             homePage = new HomePage();
             loginPage = new LoginPage();
             signUpPage = new SignUpPage();
-            step("Launched the Browser and Opened Application");
+            step("Launched The Browser And Opened Application");
         } catch (Exception e)
         {
             throw new RuntimeException("Exception In MyTest::initializePages() Method", e);
         }
     }
 
+        
     @Test
     public void testCase1()
     {
         initializePages();
+
         String emailAddress = "ch.nagendra@nag.com";
         String password = "12345";
-
-        // step("Launched the Browser and Opened Application");
-
+        String expectedErrorMessage = "Your email or password is incorrect!";
+        
         step("Clicked Signup / Login link");
         loginPage = homePage.clickOn_signupOrLogin_Link();
 
@@ -54,11 +55,14 @@ public class MyTest2 extends BaseTest
         step("Clicked Login button");
         loginPage.clickOn_loginForm_Login_Button();
 
-        step("Captured error message");
+        step("Expected Error Message : "+expectedErrorMessage+"");
+        
         String actualErrorMessage = loginPage.get_EmailOrPassword_Incorrect_Message();
-
-        step("Validated error message");
-        Assert.assertEquals(actualErrorMessage, "Your email or password is incorrect!", "Error Message Not Matched");
+        
+        step("Actual Error message : "+actualErrorMessage);
+        
+        Assert.assertEquals(actualErrorMessage, expectedErrorMessage, "Error Message Not Matched");
+        step("Validated Error message (\"Your email or password is incorrect!\") -- Success");
     }
 
     /*
