@@ -1,78 +1,65 @@
+
 @echo off
 setlocal EnableExtensions EnableDelayedExpansion
 
-REM ==========================================================
-REM killport.bat
-REM Kills the process(es) listening on a given TCP port.
-REM Usage:
-REM   killport.bat 5555
-REM   killport.bat 4444
-REM Optional:
-REM   killport.bat 5555 -y   (no prompt)
-REM ==========================================================
+echo.
+set /p "PORT=Enter the port number to kill (e.g., 4444): "
 
-if "%~1"=="" (
-  echo [ERROR] Port number is missing.
-  echo Usage: %~nx0 ^<port^> [-y]
-  exit /b 1
+REM Validate input: digits only
+echo %PORT%| findstr /R "^[0-9][0-9]*$" >nul
+if errorlevel 1 (
+    echo.
+    echo [ERROR] Invalid port number: "%PORT%"
+    pause
+    exit /b 1
 )
 
-set "PORT=%~1"
-set "NOPROMPT=%~2"
+echo.
+echo Checking port %PORT% ...
+echo.
 
-REM Validate port is numeric
-for /f "delims=0123456789" %%A in ("%PORT%") do (
-  echo [ERROR] Invalid port: %PORT%
-  exit /b 1
+set "FOUND="
+
+REM Capture PIDs reliably: take the last token on the matching line (PID is last column in netstat -aon)
+for /f "usebackq tokens=* delims=" %%L in (`netstat -aon ^| findstr /R /C:":%PORT% "`) do (
+    set "LINE=%%L"
+    for %%P in (!LINE!) do set "LAST=%%P"
+    REM LAST token becomes PID (netstat last column)
+    echo Found line: !LINE!
+    echo PID: !LAST!
+    set "FOUND=1"
+    call :KILLPID !LAST!
+    echo.
 )
 
-echo ==========================================================
-echo Searching for processes listening on TCP port %PORT% ...
-echo ==========================================================
-
-set "FOUND=0"
-
-REM Get lines that match :PORT and are LISTENING
-for /f "tokens=1,2,3,4,5" %%A in ('netstat -ano ^| findstr /R /C:":%PORT% *.*LISTENING"') do (
-  set "FOUND=1"
-  set "PID=%%E"
-  echo Found PID: !PID!  (%%A %%B %%C %%D)
-
-  REM Show process details (best effort)
-  for /f "tokens=1,*" %%P in ('tasklist /FI "PID eq !PID!" /NH') do (
-    echo Process: %%P %%Q
-  )
-
-  if /I "%NOPROMPT%"=="-y" (
-    echo Killing PID !PID! ...
-    taskkill /PID !PID! /F >nul 2>&1
-    if !errorlevel! equ 0 (
-      echo [OK] Killed PID !PID!
-    ) else (
-      echo [WARN] Failed to kill PID !PID! (try running CMD as Administrator)
-    )
-  ) else (
-    choice /M "Kill PID !PID! ?"
-    if !errorlevel! equ 1 (
-      echo Killing PID !PID! ...
-      taskkill /PID !PID! /F >nul 2>&1
-      if !errorlevel! equ 0 (
-        echo [OK] Killed PID !PID!
-      ) else (
-        echo [WARN] Failed to kill PID !PID! (try running CMD as Administrator)
-      )
-    ) else (
-      echo Skipped PID !PID!
-    )
-  )
+if not defined FOUND (
+    echo [INFO] No process found using port %PORT%.
+    echo.
+    pause
+    exit /b 0
 )
 
-if "%FOUND%"=="0" (
-  echo [INFO] No LISTENING process found on port %PORT%.
-  exit /b 0
-)
-
-echo ==========================================================
 echo Done.
-echo ==========================================================
+pause
 exit /b 0
+
+
+:KILLPID
+set "PID=%~1"
+
+REM PID should be numeric
+echo %PID%| findstr /R "^[0-9][0-9]*$" >nul
+if errorlevel 1 (
+    echo [WARN] Skipping invalid PID: %PID%
+    goto :eof
+)
+
+echo Attempting to kill PID %PID% ...
+taskkill /PID %PID% /F /T >nul 2>&1
+
+if errorlevel 1 (
+    echo [ERROR] Failed to kill PID %PID%. Try running as Administrator.
+) else (
+    echo [OK] Killed PID %PID%.
+)
+goto :eof

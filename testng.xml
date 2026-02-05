@@ -5,7 +5,6 @@
 	<!-- Suite level parameters -->
 	<parameter name="run.mode" value="grid" />
 	<parameter name="browser" value="chrome" />
-	<!--<parameter name="grid.url" value="http://localhost:4444/wd/hub"/>-->
 	<parameter name="grid.url" value="http://localhost:4444" />
 	<parameter name="base.url" value="https://www.automationexercise.com/" />
 	<parameter name="implicit.wait.seconds" value="0" />
