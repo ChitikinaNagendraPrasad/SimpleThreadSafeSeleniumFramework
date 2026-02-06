@@ -19,7 +19,7 @@ public final class ExtentManager
         {
             Path reportPath = Path.of("target", "extent-report", "ExtentReport.html");
             ExtentSparkReporter spark = new ExtentSparkReporter(reportPath.toString());
-            spark.config().setReportName("Simple Thread-Safe Selenium Framework");
+            spark.config().setReportName("Automation Report - Nagendra");
             spark.config().setDocumentTitle("Automation Report");
 
             extent = new ExtentReports();

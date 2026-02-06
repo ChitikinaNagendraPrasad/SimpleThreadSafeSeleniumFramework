@@ -6,7 +6,6 @@ import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.example.framework.base.BaseTest;
-import com.example.framework.base.BaseTestOld;
 import com.example.framework.listeners.ExtentManager;
 import com.example.framework.pages.HomePage;
 import com.example.framework.pages.LoginPage;

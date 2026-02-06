@@ -2,11 +2,9 @@ package com.example.framework.tests;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.example.framework.base.BaseTest;
-import com.example.framework.base.BaseTestOld;
 import com.example.framework.pages.HomePage;
 import com.example.framework.pages.LoginPage;
 import com.example.framework.pages.SignUpPage;
