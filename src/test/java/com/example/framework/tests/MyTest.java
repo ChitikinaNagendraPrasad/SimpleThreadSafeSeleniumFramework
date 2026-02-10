@@ -71,7 +71,7 @@ public class MyTest extends BaseTest
 
         String emailAddress = "ch.nagendra@nag.com";
         String password = "12345";
-        String expectedErrorMessage = "Your email or password is incorrect!";
+        String expectedErrorMessage = "Your email or password is incorrect!123";
 
         step("Clicked Signup / Login link");
         loginPage = homePage.clickOn_signupOrLogin_Link();

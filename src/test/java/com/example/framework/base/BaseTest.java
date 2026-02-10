@@ -44,29 +44,20 @@ public abstract class BaseTest
         setSysIfAbsent("implicit.wait.seconds", xmlImplicit);
         setSysIfAbsent("explicit.wait.seconds", xmlExplicit);
 
-        /*
-         * // PROOF logs System.out.println(
-         * "****************************************************************************************************************************************************"
-         * ); System.out.println(
-         * "****************************************************************************************************************************************************"
-         * ); log.info("BASETEST PROOF | XmlSuite file = {}",
-         * ctx.getSuite().getXmlSuite().getFileName());
-         * log.info("BASETEST PROOF | XML run.mode = {}", xmlRunMode);
-         * log.info("BASETEST PROOF | SYS run.mode = {}",
-         * System.getProperty("run.mode"));
-         * log.info("BASETEST PROOF | CFG run.mode = {}",
-         * ConfigManager.get("run.mode")); System.out.println(
-         * "****************************************************************************************************************************************************"
-         * ); log.info("BASETEST PROOF | XML browser  = {}", xmlBrowser);
-         * log.info("BASETEST PROOF | SYS browser  = {}",
-         * System.getProperty("browser"));
-         * log.info("BASETEST PROOF | CFG browser  = {}",
-         * ConfigManager.get("browser")); System.out.println(
-         * "****************************************************************************************************************************************************"
-         * ); System.out.println(
-         * "****************************************************************************************************************************************************"
-         * );
-         */
+        // PROOF logs
+        System.out.println("****************************************************************************************************************************************************");
+        System.out.println("****************************************************************************************************************************************************");
+        log.info("BASETEST PROOF | XmlSuite file = {}", ctx.getSuite().getXmlSuite().getFileName());
+        log.info("BASETEST PROOF | XML run.mode = {}", xmlRunMode);
+        log.info("BASETEST PROOF | SYS run.mode = {}", System.getProperty("run.mode"));
+        log.info("BASETEST PROOF | CFG run.mode = {}", ConfigManager.get("run.mode"));
+        System.out.println("****************************************************************************************************************************************************");
+        log.info("BASETEST PROOF | XML browser  = {}", xmlBrowser);
+        log.info("BASETEST PROOF | SYS browser  = {}", System.getProperty("browser"));
+        log.info("BASETEST PROOF | CFG browser  = {}", ConfigManager.get("browser"));
+        System.out.println("****************************************************************************************************************************************************");
+        System.out.println("****************************************************************************************************************************************************");
+
         // Create driver AFTER config is ready
         WebDriver driver = new DriverFactory().createDriver();
         DriverManager.setDriver(driver);
@@ -103,7 +94,7 @@ public abstract class BaseTest
             DriverManager.unload();
         }
     }
-    
+
     protected void step(String message)
     {
         ExtentStepLogger.step(message);
