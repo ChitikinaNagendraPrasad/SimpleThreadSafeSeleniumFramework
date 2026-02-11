@@ -91,7 +91,7 @@
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 			<version>2.2.224</version>
-<!--			<scope>test</scope>-->
+			<!--			<scope>test</scope>-->
 		</dependency>
 
 	</dependencies>
@@ -112,6 +112,15 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<resources>
+			<resource>
+				<directory>src/test/resources</directory>
+				<includes>
+					<include>CA-CIB.png</include>
+				</includes>
+				<targetPath>${project.build.directory}/extent-report</targetPath>
+			</resource>
+		</resources>
 	</build>
 
 </project>

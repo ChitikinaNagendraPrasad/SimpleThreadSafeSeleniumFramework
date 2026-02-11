@@ -8,19 +8,64 @@
         <reportName>Automation Test Report</reportName>
         <documentTitle>Automation Execution Report</documentTitle>
 
-        <!-- Replace Extent Logo with CA-CIB.png -->
-        <js>
-            $('.report-logo img').attr('src', 'CA-CIB.png');
-        </js>
+        <!-- Replace Extent Default Logo With Your Company Logo -->
+        <js><![CDATA[
+            (function() {
+                const imgPath = 'CA-CIB.png';   // Image is in same folder as HTML report
+                const selectors = [
+                    '.report-logo img',
+                    '.logo img',
+                    '.brand-logo img',
+                    '.nav-logo img'
+                ];
 
-        <!-- Optional styling -->
-        <css>
-            .report-logo img {
+                let logoImg = null;
+
+                // Try to find existing img tag
+                for (const sel of selectors) {
+                    const node = document.querySelector(sel);
+                    if (node) { logoImg = node; break; }
+                }
+
+                // If img not found, insert new one
+                if (!logoImg) {
+                    const containers = [
+                        '.report-logo',
+                        '.logo',
+                        '.brand-logo',
+                        '.nav-logo',
+                        'nav .brand-logo',
+                        'nav .logo'
+                    ];
+                    for (const c of containers) {
+                        const node = document.querySelector(c);
+                        if (node) {
+                            logoImg = new Image();
+                            node.prepend(logoImg);
+                            break;
+                        }
+                    }
+                }
+
+                // If image exists or was created
+                if (logoImg) {
+                    logoImg.src = imgPath;
+                    logoImg.alt = 'Company Logo';
+                    logoImg.style.width = '160px';
+                    logoImg.style.height = 'auto';
+                    logoImg.style.padding = '5px';
+                }
+            })();
+        ]]></js>
+
+        <css><![CDATA[
+            .report-logo img, .logo img, .brand-logo img, .nav-logo img {
                 width: 160px !important;
                 height: auto !important;
-                padding: 5px;
+                padding: 5px !important;
+                object-fit: contain;
             }
-        </css>
+        ]]></css>
 
     </configuration>
 </extentreports>
