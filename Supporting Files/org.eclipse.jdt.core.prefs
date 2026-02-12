@@ -1,0 +1,73 @@
+eclipse.preferences.version=1
+org.eclipse.jdt.core.compiler.codegen.targetPlatform=17
+org.eclipse.jdt.core.compiler.compliance=17
+org.eclipse.jdt.core.compiler.problem.enablePreviewFeatures=disabled
+org.eclipse.jdt.core.compiler.problem.forbiddenReference=warning
+org.eclipse.jdt.core.compiler.problem.reportPreviewFeatures=ignore
+org.eclipse.jdt.core.compiler.release=disabled
+org.eclipse.jdt.core.compiler.source=17
+
+# =============  FORMATTER LOCKS (PROJECT-LEVEL)  =============
+
+# Newline BEFORE 'else', keep 'else if' on one line, never keep } else on same line
+org.eclipse.jdt.core.formatter.insert_new_line_before_else_in_if_statement=insert
+org.eclipse.jdt.core.formatter.compact_else_if=true
+org.eclipse.jdt.core.formatter.keep_else_statement_on_same_line=false
+org.eclipse.jdt.core.formatter.keep_then_statement_on_same_line=false
+
+# Allman braces (every { on next line)
+org.eclipse.jdt.core.formatter.brace_position_for_type_declaration=next_line
+org.eclipse.jdt.core.formatter.brace_position_for_method_declaration=next_line
+org.eclipse.jdt.core.formatter.brace_position_for_constructor_declaration=next_line
+org.eclipse.jdt.core.formatter.brace_position_for_block=next_line
+org.eclipse.jdt.core.formatter.brace_position_for_block_in_case=next_line
+org.eclipse.jdt.core.formatter.brace_position_for_switch=next_line
+org.eclipse.jdt.core.formatter.brace_position_for_array_initializer=next_line
+org.eclipse.jdt.core.formatter.brace_position_for_else=next_line
+org.eclipse.jdt.core.formatter.brace_position_for_catch=next_line
+org.eclipse.jdt.core.formatter.brace_position_for_finally=next_line
+
+# Indentation & width
+org.eclipse.jdt.core.formatter.tabulation.char=space
+org.eclipse.jdt.core.formatter.tabulation.size=4
+org.eclipse.jdt.core.formatter.indentation.size=4
+org.eclipse.jdt.core.formatter.lineSplit=140
+
+# Keep bodies multi-line (no one-liners)
+org.eclipse.jdt.core.formatter.keep_simple_if_on_one_line=false
+org.eclipse.jdt.core.formatter.keep_simple_for_body_on_one_line=false
+org.eclipse.jdt.core.formatter.keep_simple_while_body_on_one_line=false
+org.eclipse.jdt.core.formatter.keep_simple_do_while_body_on_one_line=false
+
+# General indentation behavior
+org.eclipse.jdt.core.formatter.indent_statements_compare_to_block=true
+org.eclipse.jdt.core.formatter.indent_body_declarations_compare_to_type_header=true
+org.eclipse.jdt.core.formatter.indent_body_declarations_compare_to_method_header=true
+org.eclipse.jdt.core.formatter.indent_switchstatements_compare_to_switch=true
+org.eclipse.jdt.core.formatter.indent_switchstatements_compare_to_cases=true
+org.eclipse.jdt.core.formatter.indent_breaks_compare_to_cases=true
+
+# Optional: spaces before opening braces (visual preference)
+org.eclipse.jdt.core.formatter.insert_space_before_opening_brace_in_type_declaration=true
+org.eclipse.jdt.core.formatter.insert_space_before_opening_brace_in_method_declaration=true
+org.eclipse.jdt.core.formatter.insert_space_before_opening_brace_in_constructor_declaration=true
+org.eclipse.jdt.core.formatter.insert_space_before_opening_brace_in_block=true
+org.eclipse.jdt.core.formatter.insert_space_before_opening_brace_in_switch=true
+org.eclipse.jdt.core.formatter.insert_space_before_opening_brace_in_array_initializer=true
+
+
+# Put catch/finally on their own new line
+org.eclipse.jdt.core.formatter.insert_new_line_before_catch_in_try_statement=insert
+org.eclipse.jdt.core.formatter.insert_new_line_before_finally_in_try_statement=insert
+
+# Allman braces for catch/finally blocks
+org.eclipse.jdt.core.formatter.brace_position_for_catch=next_line
+org.eclipse.jdt.core.formatter.brace_position_for_finally=next_line
+
+# (Usually helpful in the same style)
+org.eclipse.jdt.core.formatter.brace_position_for_block=next_line
+org.eclipse.jdt.core.formatter.keep_else_statement_on_same_line=false
+org.eclipse.jdt.core.formatter.keep_then_statement_on_same_line=false
+org.eclipse.jdt.core.formatter.compact_else_if=true            # if you want 'else if' on one line
+# or compact_else_if=false                                     # if you want 'else' then 'if' on separate lines
+

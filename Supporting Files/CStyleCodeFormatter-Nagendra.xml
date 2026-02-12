@@ -1,0 +1,47 @@
+<profiles version="12">
+  <profile kind="CodeFormatterProfile" name="NAGENDRA-CODE-FORMATTER" version="12">
+    <setting id="org.eclipse.jdt.core.formatter.tabulation.char" value="space"/>
+    <setting id="org.eclipse.jdt.core.formatter.tabulation.size" value="4"/>
+    <setting id="org.eclipse.jdt.core.formatter.indentation.size" value="4"/>
+    <setting id="org.eclipse.jdt.core.formatter.lineSplit" value="140"/>
+
+    <!-- Allman braces -->
+    <setting id="org.eclipse.jdt.core.formatter.brace_position_for_type_declaration" value="next_line"/>
+    <setting id="org.eclipse.jdt.core.formatter.brace_position_for_method_declaration" value="next_line"/>
+    <setting id="org.eclipse.jdt.core.formatter.brace_position_for_constructor_declaration" value="next_line"/>
+    <setting id="org.eclipse.jdt.core.formatter.brace_position_for_block" value="next_line"/>
+    <setting id="org.eclipse.jdt.core.formatter.brace_position_for_block_in_case" value="next_line"/>
+    <setting id="org.eclipse.jdt.core.formatter.brace_position_for_switch" value="next_line"/>
+    <setting id="org.eclipse.jdt.core.formatter.brace_position_for_array_initializer" value="next_line"/>
+    <setting id="org.eclipse.jdt.core.formatter.brace_position_for_else" value="next_line"/>
+    <setting id="org.eclipse.jdt.core.formatter.brace_position_for_catch" value="next_line"/>
+    <setting id="org.eclipse.jdt.core.formatter.brace_position_for_finally" value="next_line"/>
+
+    <!-- Newline before 'else', 'else if' kept together -->
+    <setting id="org.eclipse.jdt.core.formatter.insert_new_line_before_else_in_if_statement" value="insert"/>
+    <setting id="org.eclipse.jdt.core.formatter.compact_else_if" value="true"/>
+    <setting id="org.eclipse.jdt.core.formatter.keep_else_statement_on_same_line" value="false"/>
+    <setting id="org.eclipse.jdt.core.formatter.keep_then_statement_on_same_line" value="false"/>
+
+    <!-- No single-line bodies -->
+    <setting id="org.eclipse.jdt.core.formatter.keep_simple_if_on_one_line" value="false"/>
+    <setting id="org.eclipse.jdt.core.formatter.keep_simple_for_body_on_one_line" value="false"/>
+    <setting id="org.eclipse.jdt.core.formatter.keep_simple_while_body_on_one_line" value="false"/>
+    <setting id="org.eclipse.jdt.core.formatter.keep_simple_do_while_body_on_one_line" value="false"/>
+
+    <!-- Indentation behavior -->
+    <setting id="org.eclipse.jdt.core.formatter.indent_statements_compare_to_block" value="true"/>
+    <setting id="org.eclipse.jdt.core.formatter.indent_body_declarations_compare_to_type_header" value="true"/>
+    <setting id="org.eclipse.jdt.core.formatter.indent_body_declarations_compare_to_method_header" value="true"/>
+    <setting id="org.eclipse.jdt.core.formatter.indent_switchstatements_compare_to_switch" value="true"/>
+    <setting id="org.eclipse.jdt.core.formatter.indent_switchstatements_compare_to_cases" value="true"/>
+    <setting id="org.eclipse.jdt.core.formatter.indent_breaks_compare_to_cases" value="true"/>
+
+    <setting id="org.eclipse.jdt.core.formatter.insert_new_line_before_catch_in_try_statement" value="insert"/>
+    <setting id="org.eclipse.jdt.core.formatter.insert_new_line_before_finally_in_try_statement" value="insert"/>
+    <setting id="org.eclipse.jdt.core.formatter.brace_position_for_catch" value="next_line"/>
+    <setting id="org.eclipse.jdt.core.formatter.brace_position_for_finally" value="next_line"/>
+
+
+  </profile>
+</profiles>
