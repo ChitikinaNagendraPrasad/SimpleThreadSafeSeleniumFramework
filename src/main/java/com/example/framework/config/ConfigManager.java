@@ -17,7 +17,8 @@ public final class ConfigManager
                 throw new RuntimeException("config.properties not found in test resources");
             }
             PROPS.load(is);
-        } catch (IOException e)
+        }
+        catch (IOException e)
         {
             throw new RuntimeException("Failed to load config.properties", e);
         }
@@ -51,7 +52,8 @@ public final class ConfigManager
         {
             String v = get(key);
             return (v == null) ? defaultVal : Integer.parseInt(v.trim());
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
             return defaultVal;
         }

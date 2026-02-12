@@ -15,7 +15,8 @@ public class ExtentTestNGListener implements ITestListener
     @Override
     public void onTestStart(ITestResult result)
     {
-        ExtentTest test = ExtentManager.getExtent().createTest(result.getTestClass().getName() + " :: " + result.getMethod().getMethodName());
+        ExtentTest test = ExtentManager.getExtent()
+                .createTest(result.getTestClass().getName() + " :: " + result.getMethod().getMethodName());
 
         ExtentStepLogger.setTest(test);
         test.info("ThreadId: " + Thread.currentThread().getId());
@@ -55,9 +56,11 @@ public class ExtentTestNGListener implements ITestListener
             {
                 if (lastStep != null)
                     lastStep.addScreenCaptureFromPath(path, "Failure Screenshot");
-                else if (test != null)
-                    test.addScreenCaptureFromPath(path, "Failure Screenshot");
-            } catch (Exception ignored)
+                else
+                    if (test != null)
+                        test.addScreenCaptureFromPath(path, "Failure Screenshot");
+            }
+            catch (Exception ignored)
             {
             }
         }
@@ -75,7 +78,8 @@ public class ExtentTestNGListener implements ITestListener
             if (t != null)
             {
                 test.skip(t); // <-- logs full exception + stack trace
-            } else
+            }
+            else
             {
                 test.skip("TEST SKIPPED"); // <-- fallback if no throwable
             }

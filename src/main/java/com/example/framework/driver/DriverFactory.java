@@ -27,8 +27,10 @@ public class DriverFactory
     {
 
         // Nag
-        //log.info("testng.xml ==> SYS run.mode = {} ", System.getProperty("run.mode"));
-        //log.info("config.properties ==> CFG run.mode = {} ", ConfigManager.get("run.mode"));
+        // log.info("testng.xml ==> SYS run.mode = {} ",
+        // System.getProperty("run.mode"));
+        // log.info("config.properties ==> CFG run.mode = {} ",
+        // ConfigManager.get("run.mode"));
         // Nag
 
         String runMode = ConfigManager.get("run.mode");
@@ -39,7 +41,8 @@ public class DriverFactory
         if (browser == null)
             browser = "chrome";
 
-        //log.info("Creating WebDriver | run.mode={} | browser={}", runMode, browser);
+        // log.info("Creating WebDriver | run.mode={} | browser={}", runMode,
+        // browser);
 
         if ("grid".equalsIgnoreCase(runMode))
         {
@@ -53,14 +56,14 @@ public class DriverFactory
         switch (browser.toLowerCase())
         {
             case "firefox":
-                //WebDriverManager.firefoxdriver().setup();
+                // WebDriverManager.firefoxdriver().setup();
                 return new FirefoxDriver(new FirefoxOptions());
             case "edge":
-                //WebDriverManager.edgedriver().setup();
+                // WebDriverManager.edgedriver().setup();
                 return new EdgeDriver(new EdgeOptions());
             case "chrome":
             default:
-                //WebDriverManager.chromedriver().setup();
+                // WebDriverManager.chromedriver().setup();
                 return new ChromeDriver(new ChromeOptions());
         }
     }
@@ -89,20 +92,23 @@ public class DriverFactory
         }
 
         // ✅ Hard timeouts to avoid "stuck" during new session
-        ClientConfig clientConfig = ClientConfig.defaultConfig().connectionTimeout(Duration.ofSeconds(10)).readTimeout(Duration.ofSeconds(30));
+        ClientConfig clientConfig = ClientConfig.defaultConfig().connectionTimeout(Duration.ofSeconds(10))
+                .readTimeout(Duration.ofSeconds(30));
 
         try
         {
             URL url = new URL(gridUrl);
-           // log.info("Attempting Grid session at: {}", url);
+            // log.info("Attempting Grid session at: {}", url);
 
             // ✅ Correct way in Selenium 4 to use ClientConfig
             return RemoteWebDriver.builder().address(url).oneOf(options).config(clientConfig).build();
 
-        } catch (MalformedURLException e)
+        }
+        catch (MalformedURLException e)
         {
             throw new RuntimeException("Invalid grid.url: " + gridUrl, e);
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
             throw new RuntimeException("Failed to create RemoteWebDriver. grid.url=" + gridUrl + ", browser=" + browser, e);
         }

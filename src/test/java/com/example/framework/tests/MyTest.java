@@ -25,7 +25,8 @@ public class MyTest extends BaseTest
             loginPage = new LoginPage();
             signUpPage = new SignUpPage();
             step("Launched The Browser And Opened Application");
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
             throw new RuntimeException("Exception In MyTest::initializePages() Method", e);
         }
@@ -57,13 +58,13 @@ public class MyTest extends BaseTest
         boolean errorValidationResult = Utils.validateErrorMessage(actualErrorMessage, expectedErrorMessage);
 
         if (errorValidationResult)
-            step("Validated Error message ( " +expectedErrorMessage+ " ) -- Success");
+            step("Validated Error message ( " + expectedErrorMessage + " ) -- Success");
         else
-            step("Validated Error message ( " +expectedErrorMessage+ " ) -- Failure");
+            step("Validated Error message ( " + expectedErrorMessage + " ) -- Failure");
 
         Assert.assertEquals(actualErrorMessage, expectedErrorMessage, "Error Message Not Matched");
     }
-    
+
     @Test()
     public void testCase2()
     {
@@ -90,9 +91,9 @@ public class MyTest extends BaseTest
         boolean errorValidationResult = Utils.validateErrorMessage(actualErrorMessage, expectedErrorMessage);
 
         if (errorValidationResult)
-            step("Validated Error message ( " +expectedErrorMessage+ " ) -- Success");
+            step("Validated Error message ( " + expectedErrorMessage + " ) -- Success");
         else
-            step("Validated Error message ( " +expectedErrorMessage+ " ) -- Failure");
+            step("Validated Error message ( " + expectedErrorMessage + " ) -- Failure");
 
         Assert.assertEquals(actualErrorMessage, expectedErrorMessage, "Error Message Not Matched");
     }
@@ -123,13 +124,13 @@ public class MyTest extends BaseTest
         boolean errorValidationResult = Utils.validateErrorMessage(actualErrorMessage, expectedErrorMessage);
 
         if (errorValidationResult)
-            step("Validated Error message ( " +expectedErrorMessage+ " ) -- Success");
+            step("Validated Error message ( " + expectedErrorMessage + " ) -- Success");
         else
-            step("Validated Error message ( " +expectedErrorMessage+ " ) -- Failure");
+            step("Validated Error message ( " + expectedErrorMessage + " ) -- Failure");
 
         Assert.assertEquals(actualErrorMessage, expectedErrorMessage, "Error Message Not Matched");
     }
-    
+
     @Test()
     public void testCase4()
     {
@@ -156,13 +157,13 @@ public class MyTest extends BaseTest
         boolean errorValidationResult = Utils.validateErrorMessage(actualErrorMessage, expectedErrorMessage);
 
         if (errorValidationResult)
-            step("Validated Error message ( " +expectedErrorMessage+ " ) -- Success");
+            step("Validated Error message ( " + expectedErrorMessage + " ) -- Success");
         else
-            step("Validated Error message ( " +expectedErrorMessage+ " ) -- Failure");
+            step("Validated Error message ( " + expectedErrorMessage + " ) -- Failure");
 
         Assert.assertEquals(actualErrorMessage, expectedErrorMessage, "Error Message Not Matched");
     }
-    
+
     @Test()
     public void testCase5()
     {
@@ -189,13 +190,13 @@ public class MyTest extends BaseTest
         boolean errorValidationResult = Utils.validateErrorMessage(actualErrorMessage, expectedErrorMessage);
 
         if (errorValidationResult)
-            step("Validated Error message ( " +expectedErrorMessage+ " ) -- Success");
+            step("Validated Error message ( " + expectedErrorMessage + " ) -- Success");
         else
-            step("Validated Error message ( " +expectedErrorMessage+ " ) -- Failure");
+            step("Validated Error message ( " + expectedErrorMessage + " ) -- Failure");
 
         Assert.assertEquals(actualErrorMessage, expectedErrorMessage, "Error Message Not Matched");
     }
-    
+
     @Test()
     public void testCase6()
     {
@@ -222,9 +223,9 @@ public class MyTest extends BaseTest
         boolean errorValidationResult = Utils.validateErrorMessage(actualErrorMessage, expectedErrorMessage);
 
         if (errorValidationResult)
-            step("Validated Error message ( " +expectedErrorMessage+ " ) -- Success");
+            step("Validated Error message ( " + expectedErrorMessage + " ) -- Success");
         else
-            step("Validated Error message ( " +expectedErrorMessage+ " ) -- Failure");
+            step("Validated Error message ( " + expectedErrorMessage + " ) -- Failure");
 
         Assert.assertEquals(actualErrorMessage, expectedErrorMessage, "Error Message Not Matched");
     }
@@ -255,13 +256,13 @@ public class MyTest extends BaseTest
         boolean errorValidationResult = Utils.validateErrorMessage(actualErrorMessage, expectedErrorMessage);
 
         if (errorValidationResult)
-            step("Validated Error message ( " +expectedErrorMessage+ " ) -- Success");
+            step("Validated Error message ( " + expectedErrorMessage + " ) -- Success");
         else
-            step("Validated Error message ( " +expectedErrorMessage+ " ) -- Failure");
+            step("Validated Error message ( " + expectedErrorMessage + " ) -- Failure");
 
         Assert.assertEquals(actualErrorMessage, expectedErrorMessage, "Error Message Not Matched");
     }
-    
+
     @Test()
     public void testCase8()
     {
@@ -288,13 +289,13 @@ public class MyTest extends BaseTest
         boolean errorValidationResult = Utils.validateErrorMessage(actualErrorMessage, expectedErrorMessage);
 
         if (errorValidationResult)
-            step("Validated Error message ( " +expectedErrorMessage+ " ) -- Success");
+            step("Validated Error message ( " + expectedErrorMessage + " ) -- Success");
         else
-            step("Validated Error message ( " +expectedErrorMessage+ " ) -- Failure");
+            step("Validated Error message ( " + expectedErrorMessage + " ) -- Failure");
 
         Assert.assertEquals(actualErrorMessage, expectedErrorMessage, "Error Message Not Matched");
     }
-    
+
     /*
      * public void testCase2() { String methodName =
      * Thread.currentThread().getStackTrace()[1].getMethodName(); try { String

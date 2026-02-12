@@ -51,18 +51,18 @@
                 if (logoImg) {
                     logoImg.src = imgPath;
                     logoImg.alt = 'Company Logo';
-                    logoImg.style.width = '160px';
+                    logoImg.style.width = '80px';
                     logoImg.style.height = 'auto';
-                    logoImg.style.padding = '5px';
+                    logoImg.style.padding = '2px';
                 }
             })();
         ]]></js>
 
         <css><![CDATA[
             .report-logo img, .logo img, .brand-logo img, .nav-logo img {
-                width: 160px !important;
+                width: 80px !important;
                 height: auto !important;
-                padding: 5px !important;
+                padding: 2px !important;
                 object-fit: contain;
             }
         ]]></css>

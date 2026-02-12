@@ -7,13 +7,16 @@ import com.example.framework.driver.DriverManager;
 import com.example.framework.listeners.ExtentStepLogger;
 
 import java.lang.reflect.Method;
+import java.time.LocalDateTime;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 
 public abstract class BaseTest
 {
@@ -43,21 +46,29 @@ public abstract class BaseTest
         setSysIfAbsent("base.url", xmlBaseUrl);
         setSysIfAbsent("implicit.wait.seconds", xmlImplicit);
         setSysIfAbsent("explicit.wait.seconds", xmlExplicit);
-
-        // PROOF logs
-        System.out.println("****************************************************************************************************************************************************");
-        System.out.println("****************************************************************************************************************************************************");
-        log.info("BASETEST PROOF | XmlSuite file = {}", ctx.getSuite().getXmlSuite().getFileName());
-        log.info("BASETEST PROOF | XML run.mode = {}", xmlRunMode);
-        log.info("BASETEST PROOF | SYS run.mode = {}", System.getProperty("run.mode"));
-        log.info("BASETEST PROOF | CFG run.mode = {}", ConfigManager.get("run.mode"));
-        System.out.println("****************************************************************************************************************************************************");
-        log.info("BASETEST PROOF | XML browser  = {}", xmlBrowser);
-        log.info("BASETEST PROOF | SYS browser  = {}", System.getProperty("browser"));
-        log.info("BASETEST PROOF | CFG browser  = {}", ConfigManager.get("browser"));
-        System.out.println("****************************************************************************************************************************************************");
-        System.out.println("****************************************************************************************************************************************************");
-
+        /*
+         * // PROOF logs System.out.println(
+         * "****************************************************************************************************************************************************"
+         * ); System.out.println(
+         * "****************************************************************************************************************************************************"
+         * ); log.info("BASETEST PROOF | XmlSuite file = {}",
+         * ctx.getSuite().getXmlSuite().getFileName());
+         * log.info("BASETEST PROOF | XML run.mode = {}", xmlRunMode);
+         * log.info("BASETEST PROOF | SYS run.mode = {}",
+         * System.getProperty("run.mode"));
+         * log.info("BASETEST PROOF | CFG run.mode = {}",
+         * ConfigManager.get("run.mode")); System.out.println(
+         * "****************************************************************************************************************************************************"
+         * ); log.info("BASETEST PROOF | XML browser  = {}", xmlBrowser);
+         * log.info("BASETEST PROOF | SYS browser  = {}",
+         * System.getProperty("browser"));
+         * log.info("BASETEST PROOF | CFG browser  = {}",
+         * ConfigManager.get("browser")); System.out.println(
+         * "****************************************************************************************************************************************************"
+         * ); System.out.println(
+         * "****************************************************************************************************************************************************"
+         * );
+         */
         // Create driver AFTER config is ready
         WebDriver driver = new DriverFactory().createDriver();
         DriverManager.setDriver(driver);
@@ -65,6 +76,7 @@ public abstract class BaseTest
         step("Launched the Browser and Opened Application");
         driver.get(ConfigManager.get("base.url"));
         log.info("Opened URL: {}", ConfigManager.get("base.url"));
+        log.info("My Name Is Nagendra");
     }
 
     private void setSysIfAbsent(String key, String xmlVal)
@@ -89,7 +101,8 @@ public abstract class BaseTest
                 driver.quit();
                 log.info("Driver quit successfully");
             }
-        } finally
+        }
+        finally
         {
             DriverManager.unload();
         }
@@ -103,5 +116,20 @@ public abstract class BaseTest
     protected void info(String message)
     {
         ExtentStepLogger.info(message);
+    }
+
+    @BeforeSuite
+    public void startLog()
+    {
+        LocalDateTime dateTime = LocalDateTime.now();
+        log.info("********************************************************************************************");
+        log.info("                                    " + dateTime);
+        log.info("********************************************************************************************");
+    }
+
+    @AfterSuite
+    public void EndLog()
+    {
+        log.info("********************************************************************************************\n");
     }
 }

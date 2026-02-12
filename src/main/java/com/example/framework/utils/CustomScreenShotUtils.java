@@ -17,27 +17,29 @@ public final class CustomScreenShotUtils
     {
     }
 
-
-    private static Path screenshotsDir() {
+    private static Path screenshotsDir()
+    {
         return Paths.get(System.getProperty("user.dir"), "Screenshots", RunInfo.runId());
     }
 
-    public static String capture(WebDriver driver, String testName) {
-        if (driver == null) return null;
+    public static String capture(WebDriver driver, String testName)
+    {
+        if (driver == null)
+            return null;
 
-        String fileName = testName
-                + "_T" + Thread.currentThread().getId()
-                + "_" + System.currentTimeMillis()
-                + ".png";
+        String fileName = testName + "_T" + Thread.currentThread().getId() + "_" + System.currentTimeMillis() + ".png";
 
         Path dest = screenshotsDir().resolve(fileName);
 
-        try {
+        try
+        {
             Files.createDirectories(dest.getParent());
             File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
             FileUtils.copyFile(src, dest.toFile());
             return dest.toString();
-        } catch (Exception e) {
+        }
+        catch (Exception e)
+        {
             return null;
         }
     }

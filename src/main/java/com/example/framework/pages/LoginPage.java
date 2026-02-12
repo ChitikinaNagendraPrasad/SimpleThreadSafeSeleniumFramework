@@ -31,7 +31,6 @@ public class LoginPage
 
     // Error Messages
     By errorMsg_loginForm_EmailOrPassword_Incorrect = By.xpath("//p[normalize-space()=\"Your email or password is incorrect!\"]");
- 
 
     public LoginPage fillDataIn_loginForm_EmailAddress_TextBox(String email)
     {
@@ -55,8 +54,8 @@ public class LoginPage
 
     public String get_EmailOrPassword_Incorrect_Message()
     {
-        String returnValue = null;        
-        returnValue=WaitUtils.visible(errorMsg_loginForm_EmailOrPassword_Incorrect).getText();
+        String returnValue = null;
+        returnValue = WaitUtils.visible(errorMsg_loginForm_EmailOrPassword_Incorrect).getText();
         return returnValue;
     }
 
@@ -83,6 +82,6 @@ public class LoginPage
     public void clickOn_signUpForm_Signup_Button()
     {
         WaitUtils.click(signUpForm_Signup_Button);
-        //return SignUpPage;
+        // return SignUpPage;
     }
 }

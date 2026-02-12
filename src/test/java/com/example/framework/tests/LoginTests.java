@@ -12,30 +12,36 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-public class LoginTests extends BaseTest {
+public class LoginTests extends BaseTest
+{
     private static final Logger log = LogManager.getLogger(LoginTests.class);
 
     @DataProvider(name = "excelLoginData", parallel = true)
-    public Object[][] excelData() {
+    public Object[][] excelData()
+    {
         return ExcelUtils.readSheet("testdata/login-data.xlsx", "login");
     }
 
     @DataProvider(name = "dbLoginData", parallel = true)
-    public Object[][] dbData() {
+    public Object[][] dbData()
+    {
         return DBUtils.fetchLoginData();
     }
 
     @Test(dataProvider = "excelLoginData", retryAnalyzer = RetryAnalyzer.class)
-    public void login_using_excel(String username, String password, String expected) {
+    public void login_using_excel(String username, String password, String expected)
+    {
         runLoginScenario(username, password, expected);
     }
 
     @Test(dataProvider = "dbLoginData", retryAnalyzer = RetryAnalyzer.class)
-    public void login_using_db(String username, String password, String expected) {
+    public void login_using_db(String username, String password, String expected)
+    {
         runLoginScenario(username, password, expected);
     }
 
-    private void runLoginScenario(String username, String password, String expected) {
+    private void runLoginScenario(String username, String password, String expected)
+    {
         log.info("Running login scenario | user={} | expected={}", username, expected);
 
         LoginPageOld login = new LoginPageOld();
@@ -43,9 +49,12 @@ public class LoginTests extends BaseTest {
 
         String msg = secure.getFlashMessage();
 
-        if ("success".equalsIgnoreCase(expected)) {
+        if ("success".equalsIgnoreCase(expected))
+        {
             Assert.assertTrue(msg.contains("You logged into a secure area"), "Expected success message. Actual: " + msg);
-        } else {
+        }
+        else
+        {
             Assert.assertTrue(msg.toLowerCase().contains("invalid"), "Expected invalid message. Actual: " + msg);
         }
     }

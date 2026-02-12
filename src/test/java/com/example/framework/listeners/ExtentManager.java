@@ -6,22 +6,30 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import java.io.IOException;
 import java.nio.file.Path;
 
-public final class ExtentManager {
+public final class ExtentManager
+{
 
-    private ExtentManager() {}
+    private ExtentManager()
+    {
+    }
 
     private static ExtentReports extent;
 
-    public static synchronized ExtentReports getExtent() {
+    public static synchronized ExtentReports getExtent()
+    {
 
-        if (extent == null) {
+        if (extent == null)
+        {
 
             Path reportPath = Path.of("target", "extent-report", "ExtentReport.html");
             ExtentSparkReporter spark = new ExtentSparkReporter(reportPath.toString());
 
-            try {
+            try
+            {
                 spark.loadXMLConfig("src/test/resources/extent-config.xml");
-            } catch (IOException e) {
+            }
+            catch (IOException e)
+            {
                 e.printStackTrace();
             }
 
