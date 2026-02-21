@@ -4,12 +4,11 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.aventstack.extentreports.ExtentReports;
 import com.example.framework.base.BaseTest;
-import com.example.framework.listeners.ExtentManager;
 import com.example.framework.pages.HomePage;
 import com.example.framework.pages.LoginPage;
 import com.example.framework.pages.SignUpPage;
+import com.example.framework.utils.Utils;
 
 public class MyTest2 extends BaseTest
 {
@@ -33,7 +32,7 @@ public class MyTest2 extends BaseTest
         }
     }
 
-    @Test
+    @Test()
     public void testCase1()
     {
         initializePages();
@@ -54,14 +53,247 @@ public class MyTest2 extends BaseTest
         step("Clicked Login button");
         loginPage.clickOn_loginForm_Login_Button();
 
-        step("Expected Error Message : " + expectedErrorMessage + "");
+        String actualErrorMessage = loginPage.get_EmailOrPassword_Incorrect_Message();
+
+        boolean errorValidationResult = Utils.validateErrorMessage(actualErrorMessage, expectedErrorMessage);
+
+        if (errorValidationResult)
+            step("Validated Error message ( " + expectedErrorMessage + " ) -- Success");
+        else
+            step("Validated Error message ( " + expectedErrorMessage + " ) -- Failure");
+
+        Assert.assertEquals(actualErrorMessage, expectedErrorMessage, "Error Message Not Matched");
+    }
+
+    @Test()
+    public void testCase2()
+    {
+        initializePages();
+
+        String emailAddress = "ch.nagendra@nag.com";
+        String password = "12345";
+        String expectedErrorMessage = "Your email or password is incorrect!123";
+
+        step("Clicked Signup / Login link");
+        loginPage = homePage.clickOn_signupOrLogin_Link();
+
+        step("Entered Username: " + emailAddress);
+        loginPage.fillDataIn_loginForm_EmailAddress_TextBox(emailAddress);
+
+        step("Entered Password");
+        loginPage.fillDataIn_loginForm_Password_TextBox(password);
+
+        step("Clicked Login button");
+        loginPage.clickOn_loginForm_Login_Button();
 
         String actualErrorMessage = loginPage.get_EmailOrPassword_Incorrect_Message();
 
-        step("Actual Error message : " + actualErrorMessage);
+        boolean errorValidationResult = Utils.validateErrorMessage(actualErrorMessage, expectedErrorMessage);
+
+        if (errorValidationResult)
+            step("Validated Error message ( " + expectedErrorMessage + " ) -- Success");
+        else
+            step("Validated Error message ( " + expectedErrorMessage + " ) -- Failure");
 
         Assert.assertEquals(actualErrorMessage, expectedErrorMessage, "Error Message Not Matched");
-        step("Validated Error message (\"Your email or password is incorrect!\") -- Success");
+    }
+
+    @Test()
+    public void testCase3()
+    {
+        initializePages();
+
+        String emailAddress = "ch.nagendra@nag.com";
+        String password = "12345";
+        String expectedErrorMessage = "Your email or password is incorrect!";
+
+        step("Clicked Signup / Login link");
+        loginPage = homePage.clickOn_signupOrLogin_Link();
+
+        step("Entered Username: " + emailAddress);
+        loginPage.fillDataIn_loginForm_EmailAddress_TextBox(emailAddress);
+
+        step("Entered Password");
+        loginPage.fillDataIn_loginForm_Password_TextBox(password);
+
+        step("Clicked Login button");
+        loginPage.clickOn_loginForm_Login_Button();
+
+        String actualErrorMessage = loginPage.get_EmailOrPassword_Incorrect_Message();
+
+        boolean errorValidationResult = Utils.validateErrorMessage(actualErrorMessage, expectedErrorMessage);
+
+        if (errorValidationResult)
+            step("Validated Error message ( " + expectedErrorMessage + " ) -- Success");
+        else
+            step("Validated Error message ( " + expectedErrorMessage + " ) -- Failure");
+
+        Assert.assertEquals(actualErrorMessage, expectedErrorMessage, "Error Message Not Matched");
+    }
+
+    @Test()
+    public void testCase4()
+    {
+        initializePages();
+
+        String emailAddress = "ch.nagendra@nag.com";
+        String password = "12345";
+        String expectedErrorMessage = "Your email or password is incorrect!";
+
+        step("Clicked Signup / Login link");
+        loginPage = homePage.clickOn_signupOrLogin_Link();
+
+        step("Entered Username: " + emailAddress);
+        loginPage.fillDataIn_loginForm_EmailAddress_TextBox(emailAddress);
+
+        step("Entered Password");
+        loginPage.fillDataIn_loginForm_Password_TextBox(password);
+
+        step("Clicked Login button");
+        loginPage.clickOn_loginForm_Login_Button();
+
+        String actualErrorMessage = loginPage.get_EmailOrPassword_Incorrect_Message();
+
+        boolean errorValidationResult = Utils.validateErrorMessage(actualErrorMessage, expectedErrorMessage);
+
+        if (errorValidationResult)
+            step("Validated Error message ( " + expectedErrorMessage + " ) -- Success");
+        else
+            step("Validated Error message ( " + expectedErrorMessage + " ) -- Failure");
+
+        Assert.assertEquals(actualErrorMessage, expectedErrorMessage, "Error Message Not Matched");
+    }
+
+    @Test()
+    public void testCase5()
+    {
+        initializePages();
+
+        String emailAddress = "ch.nagendra@nag.com";
+        String password = "12345";
+        String expectedErrorMessage = "Your email or password is incorrect!";
+
+        step("Clicked Signup / Login link");
+        loginPage = homePage.clickOn_signupOrLogin_Link();
+
+        step("Entered Username: " + emailAddress);
+        loginPage.fillDataIn_loginForm_EmailAddress_TextBox(emailAddress);
+
+        step("Entered Password");
+        loginPage.fillDataIn_loginForm_Password_TextBox(password);
+
+        step("Clicked Login button");
+        loginPage.clickOn_loginForm_Login_Button();
+
+        String actualErrorMessage = loginPage.get_EmailOrPassword_Incorrect_Message();
+
+        boolean errorValidationResult = Utils.validateErrorMessage(actualErrorMessage, expectedErrorMessage);
+
+        if (errorValidationResult)
+            step("Validated Error message ( " + expectedErrorMessage + " ) -- Success");
+        else
+            step("Validated Error message ( " + expectedErrorMessage + " ) -- Failure");
+
+        Assert.assertEquals(actualErrorMessage, expectedErrorMessage, "Error Message Not Matched");
+    }
+
+    @Test()
+    public void testCase6()
+    {
+        initializePages();
+
+        String emailAddress = "ch.nagendra@nag.com";
+        String password = "12345";
+        String expectedErrorMessage = "Your email or password is incorrect!";
+
+        step("Clicked Signup / Login link");
+        loginPage = homePage.clickOn_signupOrLogin_Link();
+
+        step("Entered Username: " + emailAddress);
+        loginPage.fillDataIn_loginForm_EmailAddress_TextBox(emailAddress);
+
+        step("Entered Password");
+        loginPage.fillDataIn_loginForm_Password_TextBox(password);
+
+        step("Clicked Login button");
+        loginPage.clickOn_loginForm_Login_Button();
+
+        String actualErrorMessage = loginPage.get_EmailOrPassword_Incorrect_Message();
+
+        boolean errorValidationResult = Utils.validateErrorMessage(actualErrorMessage, expectedErrorMessage);
+
+        if (errorValidationResult)
+            step("Validated Error message ( " + expectedErrorMessage + " ) -- Success");
+        else
+            step("Validated Error message ( " + expectedErrorMessage + " ) -- Failure");
+
+        Assert.assertEquals(actualErrorMessage, expectedErrorMessage, "Error Message Not Matched");
+    }
+
+    @Test()
+    public void testCase7()
+    {
+        initializePages();
+
+        String emailAddress = "ch.nagendra@nag.com";
+        String password = "12345";
+        String expectedErrorMessage = "Your email or password is incorrect!";
+
+        step("Clicked Signup / Login link");
+        loginPage = homePage.clickOn_signupOrLogin_Link();
+
+        step("Entered Username: " + emailAddress);
+        loginPage.fillDataIn_loginForm_EmailAddress_TextBox(emailAddress);
+
+        step("Entered Password");
+        loginPage.fillDataIn_loginForm_Password_TextBox(password);
+
+        step("Clicked Login button");
+        loginPage.clickOn_loginForm_Login_Button();
+
+        String actualErrorMessage = loginPage.get_EmailOrPassword_Incorrect_Message();
+
+        boolean errorValidationResult = Utils.validateErrorMessage(actualErrorMessage, expectedErrorMessage);
+
+        if (errorValidationResult)
+            step("Validated Error message ( " + expectedErrorMessage + " ) -- Success");
+        else
+            step("Validated Error message ( " + expectedErrorMessage + " ) -- Failure");
+
+        Assert.assertEquals(actualErrorMessage, expectedErrorMessage, "Error Message Not Matched");
+    }
+
+    @Test()
+    public void testCase8()
+    {
+        initializePages();
+
+        String emailAddress = "ch.nagendra@nag.com";
+        String password = "12345";
+        String expectedErrorMessage = "Your email or password is incorrect!";
+
+        step("Clicked Signup / Login link");
+        loginPage = homePage.clickOn_signupOrLogin_Link();
+
+        step("Entered Username: " + emailAddress);
+        loginPage.fillDataIn_loginForm_EmailAddress_TextBox(emailAddress);
+
+        step("Entered Password");
+        loginPage.fillDataIn_loginForm_Password_TextBox(password);
+
+        step("Clicked Login button");
+        loginPage.clickOn_loginForm_Login_Button();
+
+        String actualErrorMessage = loginPage.get_EmailOrPassword_Incorrect_Message();
+
+        boolean errorValidationResult = Utils.validateErrorMessage(actualErrorMessage, expectedErrorMessage);
+
+        if (errorValidationResult)
+            step("Validated Error message ( " + expectedErrorMessage + " ) -- Success");
+        else
+            step("Validated Error message ( " + expectedErrorMessage + " ) -- Failure");
+
+        Assert.assertEquals(actualErrorMessage, expectedErrorMessage, "Error Message Not Matched");
     }
 
     /*

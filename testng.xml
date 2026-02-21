@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="BankingDemoSuite" parallel="none" thread-count="4">
+<suite name="BankingDemoSuite" parallel="methods" thread-count="3">
 	<!-- Suite level parameters -->
-	<parameter name="browser" value="firefox" />
+	<parameter name="browser" value="chrome" />
 	<parameter name="run.mode" value="local" />
 	<parameter name="base.url" value="https://www.automationexercise.com/" />
 	<parameter name="implicit.wait.seconds" value="5" />
@@ -10,12 +10,13 @@
 
 	<listeners>
 		<listener class-name="com.example.framework.listeners.ExtentTestNGListener" />
-		<listener class-name="com.example.framework.listeners.RetryTransformer"/>
+		<!--<listener class-name="com.example.framework.listeners.RetryTransformer"/>-->
 	</listeners>
 
 	<test name="MyTestCases">
 		<classes>
 			<class name="com.example.framework.tests.MyTest" />
+			<class name="com.example.framework.tests.MyTest2" />
 		</classes>
 	</test>
 </suite>
